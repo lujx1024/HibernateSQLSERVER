@@ -13,9 +13,13 @@ package org.lujx.model;
  * @date: 2018年7月17日 下午5:11:14  
  */
 public class Book {
+	//主键
 	private Integer bookId;
+	//书的名称
 	private String bookName;
+	//书籍的价格
 	private Double bookPrice;
+	//书籍的作者
 	private String bookAuth;
 	public Book() {
 		// TODO Auto-generated constructor stub

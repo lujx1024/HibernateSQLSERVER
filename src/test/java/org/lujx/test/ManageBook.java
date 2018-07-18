@@ -14,12 +14,10 @@ import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Conjunction;
 import org.hibernate.criterion.Disjunction;
 import org.hibernate.criterion.Restrictions;
 import org.junit.Test;
 import org.lujx.model.Book;
-import org.lujx.utils.HibSf;
 import org.lujx.utils.HibernateUtil;
 
 /**
@@ -50,6 +48,12 @@ public class ManageBook {
 			session.close();
 	}
 	
+	/**
+	 * 
+	 * @Description: 调用sqlserver数据库的无参无返回值存储过程
+	 * @param  
+	 * @return void
+	 */
 	@Test
 	public void testCallProWithoutInputParam(){
 		
@@ -64,6 +68,12 @@ public class ManageBook {
         session.close();
 	}
 	
+	/**
+	 * 
+	 * @Description: 调用SQLSERVER数据库的带一个输入参数的存储过程
+	 * @param  
+	 * @return void
+	 */
 	@Test
 	public  void testCallProcWithInputParam(){
 		Session session = sessionFactory.openSession();
@@ -76,16 +86,20 @@ public class ManageBook {
 		session.close();
 	}
 	
+	/**
+	 * 
+	 * @Description: 调用带有返回值的存储过程，未完成
+	 * @param  
+	 * @return void
+	 */
 	@Test
 	public void testCallProcWithInputParamAndOutParam(){
 		Session session = sessionFactory.openSession();
 		String str="八";
-		String callableStatement="exec  Proc_GetPrice_BooksByName( ？,?)";
-		
-		SQLQuery sqlQuery = session.createSQLQuery(callableStatement);
-		
-		sqlQuery.setParameter(1, str);
-		
-		
+//		String callableStatement="exec  Proc_GetPrice_BooksByName( ？,?)";
+//		
+//		SQLQuery sqlQuery = session.createSQLQuery(callableStatement);
+//		
+//		sqlQuery.setParameter(1, str);
 	}
 }
