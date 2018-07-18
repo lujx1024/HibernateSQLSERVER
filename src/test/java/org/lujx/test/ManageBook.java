@@ -79,7 +79,6 @@ public class ManageBook {
 	@Test
 	public void testCallProcWithInputParamAndOutParam(){
 		Session session = sessionFactory.openSession();
-//		List<Book> list = HibernateUtil.dbProcQuery(Book.class, "Proc_GetPrice_BooksByName", "八");
 		String str="八";
 		String callableStatement="exec  Proc_GetPrice_BooksByName( ？,?)";
 		
