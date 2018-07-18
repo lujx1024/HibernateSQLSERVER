@@ -87,6 +87,6 @@ public class ManageBook {
 		
 		sqlQuery.setParameter(1, str);
 		
-		System.out.println();
+		
 	}
 }
